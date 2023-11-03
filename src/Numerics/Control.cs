@@ -311,7 +311,11 @@ namespace MathNet.Numerics
             var sb = new StringBuilder();
             sb.AppendLine("Math.NET Numerics Configuration:");
             sb.AppendLine($"Version {versionAttribute?.InformationalVersion}");
-#if NET5_0
+#if NET7_0
+            sb.AppendLine("Built for .NET 7.0");
+#elif NET7_0_OR_GREATER
+            sb.AppendLine("Built for .NET 7.0+");
+#elif NET5_0
             sb.AppendLine("Built for .NET 5.0");
 #elif NET5_0_OR_GREATER
             sb.AppendLine("Built for .NET 5.0+");
